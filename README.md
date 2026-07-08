@@ -4,12 +4,14 @@ A modern, full-stack **Task Management Application** built using the **MERN** st
 
 The application supports secure authentication, real-time task operations, and a responsive UI optimized for both desktop and mobile users.
 
-Live Demo: https://task-manager-by-aayushshaw.onrender.com/
+**Live Demo (Frontend):** _coming soon_
+**Live Backend API:** https://personal-task-tracker-app-backend.onrender.com/
+
 ---
 
 ## 🚀 Overview
 
-Managing tasks efficiently is essential for productivity, yet many tools are either too complex or lack essential features.  
+Managing tasks efficiently is essential for productivity, yet many tools are either too complex or lack essential features.
 **TaskMaster** provides a **simple, fast, and user-centric solution** that focuses on clarity, usability, and performance.
 
 The app enables users to:
@@ -49,7 +51,7 @@ The app enables users to:
 - Due date assignment for tasks
 - Created date tracking
 - Visual indicators for:
-    - Today’s tasks
+    - Today's tasks
     - Overdue tasks
 
 ### 🎨 Modern UI / UX
@@ -90,7 +92,7 @@ The Task Manager application follows a clean **client–server architecture** wi
 #### 🛠️ Backend
 - **Node.js** – JavaScript runtime for scalable server-side development
 - **Express.js** – Minimal and flexible backend framework
-- **MongoDB** – NoSQL database for storing users and task data
+- **MongoDB (Atlas)** – NoSQL database for storing users and task data
 - **JWT Authentication** – Secure token-based authentication
 - **bcrypt** – Password hashing for enhanced security
 - **validator** – Server-side input validation
@@ -101,13 +103,13 @@ The Task Manager application follows a clean **client–server architecture** wi
 ---
 
 #### ☁️ Deployment
-- Frontend and Backend hosted on **Render**
+- Backend hosted on **Render** (Web Service)
+- Frontend hosted on **Render** (Static Site)
+- Database hosted on **MongoDB Atlas**
 - RESTful API architecture for clean separation of concerns
 - Environment-based configuration for security and scalability
 
-
 ### 📂 Project Structure
-```
 ├── backend
 │   ├── config
 │   │   └── db.js
@@ -126,81 +128,76 @@ The Task Manager application follows a clean **client–server architecture** wi
 │   ├── package.json
 │   └── server.js
 └── frontend
-    ├── public
-    │   ├── LOGO.svg
-    │   └── preview.png
-    ├── src
-    │   ├── assets
-    │   │   └── dummy.jsx
-    │   ├── components
-    │   │   ├── Layout.jsx
-    │   │   ├── Login.jsx
-    │   │   ├── Navbar.jsx
-    │   │   ├── Profile.jsx
-    │   │   ├── Sidebar.jsx
-    │   │   ├── SignUp.jsx
-    │   │   ├── TaskItem.jsx
-    │   │   └── TaskModal.jsx
-    │   ├── pages
-    │   │   ├── CompletePage.jsx
-    │   │   ├── Dashboard.jsx
-    │   │   └── PendingPage.jsx
-    │   ├── App.jsx
-    │   ├── index.css
-    │   └── main.jsx
-    ├── .gitignore
-    ├── eslint.config.js
-    ├── index.html
-    ├── package-lock.json
-    ├── package.json
-    └── vite.config.js
-
-```
+├── public
+│   ├── LOGO.svg
+│   └── preview.png
+├── src
+│   ├── api
+│   │   └── axios.js
+│   ├── assets
+│   │   └── dummy.jsx
+│   ├── components
+│   │   ├── Layout.jsx
+│   │   ├── Login.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── SignUp.jsx
+│   │   ├── TaskItem.jsx
+│   │   └── TaskModal.jsx
+│   ├── pages
+│   │   ├── CompletePage.jsx
+│   │   ├── Dashboard.jsx
+│   │   └── PendingPage.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+└── vite.config.js
 
 ---
 
 ## 🗄️ Database Schema (MongoDB)
 
 ### User Collection
-```
-_id, name, email, password(hashed)
-```
+_id, name, email, password (hashed)
 
 ### Task Collection
-```
 _id, title, description, priority, dueDate, owner, completed, createdAt
-```
 
 ---
 
 ## ▶️ How to Run the Project Locally
 
 ### 1️⃣ Clone the Repository
-```
-git clone https://github.com/your-username/taskmaster.git
-cd taskmaster
-```
+git clone https://github.com/VARUN-BIT9090u8/taskmaster-app.git
+cd taskmaster-app
+
 ### 2️⃣ Setup Backend
-```
 cd backend
 npm install
+Create a **`.env`** file inside `backend/`:
+MONGO_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_secret_key
+CLIENT_URL=http://localhost:5173
+PORT=4000
+
 npm start
-```
+
 ### 3️⃣ Setup Frontend
-```
 cd frontend
 npm install
+Create a **`.env`** file inside `frontend/`:
+VITE_API_URL=http://localhost:4000
+
 npm run dev
-```
-### 4️⃣ Environment Variables
-Create a **`.env`** file in backend:
-```
-JWT_SECRET=your_secret_key
-```
-### 5️⃣ Open in Browser
-```
+
+### 4️⃣ Open in Browser
 http://localhost:5173
-``` 
 
 ---
 
@@ -208,19 +205,19 @@ http://localhost:5173
 
 ### Software Required
 - Node.js (v18+)
-- MongoDB
+- MongoDB Atlas account (or local MongoDB)
 - Git
 - Modern Web Browser
-
 
 ---
 
 ## 🔒 Security Considerations
 - Passwords encrypted using bcrypt
 - JWT-based authentication with expiration
-- Protected API routes
+- Protected API routes via middleware
 - Token validation on each request
 - Automatic session cleanup on expiry
+- CORS restricted to allowed frontend origin only
 
 ---
 
@@ -231,6 +228,7 @@ http://localhost:5173
 - Team collaboration & shared boards
 - Cloud-based notifications
 - Mobile app version (React Native)
+
 ---
 
 ## ⭐ Contributing
@@ -246,9 +244,6 @@ Built with ❤️ using React, Node.js, MongoDB, Tailwind CSS, and modern web te
 
 ## 👤 Author
 
-**[Aayush Shaw](https://aayushshaw.vercel.app/)**  
-Full Stack Developer | Product-focused Engineer  
-
-🔗 Portfolio: https://aayushshaw.vercel.app/  
-💼 Projects: TaskMaster, Face Recognition Attendance System  
-💡 Focus Areas: Full-Stack Development, System Design, UX-driven Products
+**Bandi Varun Kumar**
+Full Stack Developer | Product-focused Engineer
+GitHub: [@VARUN-BIT9090u8](https://github.com/VARUN-BIT9090u8)
