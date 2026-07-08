@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+--color-basedark: #13111C;   /* deep near-black indigo background */
+--color-one: #6C63FF;        /* vibrant indigo-violet accent (buttons, highlights) */
+--color-two: #2A2438;        /* card/panel background, one shade up from base */
+--color-maintxt: #F4F2FA;    /* soft off-white text, easier on eyes than pure white */
+--color-subtxt: #A6A0BE;     /* muted secondary text (dates, labels) */
+--color-success: #4ADE80;    /* completed/low priority */
+--color-warning: #FBBF24;    /* medium priority */
+--color-danger: #F87171;     /* high priority / delete */
+}
+
+body {
+  font-family: "Fredoka", system-ui, sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+/* 🔥 Chrome autofill FULL override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #faf0e6 !important; /* maintxt */
+  caret-color: #faf0e6 !important;
+
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+
+  background-color: transparent !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 300ms ease-in-out forwards;
+}
+
+
+@tailwind utilities;
