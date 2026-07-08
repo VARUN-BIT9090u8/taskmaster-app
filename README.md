@@ -4,7 +4,7 @@ A modern, full-stack **Task Management Application** built using the **MERN** st
 
 The application supports secure authentication, real-time task operations, and a responsive UI optimized for both desktop and mobile users.
 
-**Live Demo (Frontend):** _coming soon_
+**Live Demo (Frontend):**https://taskmaster-frontend-99zq.onrender.com/
 **Live Backend API:** https://personal-task-tracker-app-backend.onrender.com/
 
 ---
